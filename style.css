@@ -1,0 +1,205 @@
+/* -------------------------------------------------
+   Global Variables — Light Theme (Default)
+---------------------------------------------------*/
+:root {
+    --bg: #FFF4E6;
+    --card-bg: rgba(255, 234, 210, 0.75);
+    --text: #4A2C2A;
+    --accent-1: #FFB997;
+    --accent-2: #FF9F80;
+    --shadow: rgba(150, 120, 90, 0.25);
+    --nav-bg: rgba(255, 240, 225, 0.9);
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------
+   Dark Theme
+---------------------------------------------------*/
+:root[data-theme="dark"] {
+    --bg: #1A1A1A;
+    --card-bg: rgba(50, 50, 50, 0.6);
+    --text: #E8DAD1;
+    --accent-1: #F28F6B;
+    --accent-2: #FF8F5C;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --nav-bg: rgba(35, 35, 35, 0.9);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------------------------------------
+   Reset
+---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s ease-in-out;
+}
+
+/* -------------------------------------------------
+   Navigation Bar
+---------------------------------------------------*/
+nav {
+    backdrop-filter: blur(12px);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-2);
+}
+
+/* -------------------------------------------------
+   Theme Toggle Button
+---------------------------------------------------*/
+.theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: 0.3s ease;
+    margin-left: 12px;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.12);
+}
+
+.theme-toggle .sun {
+    display: inline-block;
+}
+
+.theme-toggle .moon {
+    display: none;
+}
+
+[data-theme="dark"] .sun {
+    display: none;
+}
+
+[data-theme="dark"] .moon {
+    display: inline-block;
+}
+
+/* -------------------------------------------------
+   Containers & Cards
+---------------------------------------------------*/
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.card {
+    padding: 30px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 20px var(--shadow);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px var(--shadow);
+}
+
+.card h1,
+.card h2 {
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.card ul {
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+/* -------------------------------------------------
+   Buttons
+---------------------------------------------------*/
+.btn {
+    display: inline-block;
+    background: var(--accent-2);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: var(--accent-1);
+}
+
+/* -------------------------------------------------
+   Footer
+---------------------------------------------------*/
+footer {
+    text-align: center;
+    padding: 30px 0;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* -------------------------------------------------
+   Accent Utility Class
+---------------------------------------------------*/
+.accent {
+    color: var(--accent-2);
+    font-weight: bold;
+}
+
+/* -------------------------------------------------
+   Responsive Mode
+---------------------------------------------------*/
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
